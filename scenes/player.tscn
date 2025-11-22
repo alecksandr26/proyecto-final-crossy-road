@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckftd73uyrv8t"]
+
+[ext_resource type="PackedScene" uid="uid://bor8a2qpt5aj7" path="res://assets/axolote.gltf" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bpn5g3jxvoq7s" path="res://scenes/camera_rig.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://dwgiuvrsttlh2" path="res://scenes/main_character.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://s5ugrpk4rfw4" path="res://addons/cardboard_vr/scripts/cardboard_vr_camera.gd" id="2_tuyoq"]
+[ext_resource type="Script" uid="uid://bjfa2aga5hdx1" path="res://scenes/hurtbox.gd" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://vr7w20acb7y0" path="res://scenes/touch_pad_controls.gd" id="5_qlg0r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vyb7"]
+size = Vector3(11.8884535, 5.1586647, 7.4474907)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhqgy"]
+size = Vector3(9.003204, 3.8807373, 4.5032835)
+
+[sub_resource type="FontFile" id="FontFile_dqkch"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qlg0r"]
+font = SubResource("FontFile_dqkch")
+
+[node name="player" type="Node3D"]
+
+[node name="CameraRig" type="Node3D" parent="."]
+transform = Transform3D(0.7880108, 0.47093266, -0.3965621, 0, 0.6441236, 0.7649214, 0.6156615, -0.60276634, 0.50757635, -17.055, 30.485, 18.175)
+script = ExtResource("1_qhqgy")
+
+[node name="CardboardVRCamera3D" type="Camera3D" parent="CameraRig"]
+script = ExtResource("2_tuyoq")
+UseGyroscope = true
+viewport_scale = 0.5
+metadata/_custom_type_script = "uid://s5ugrpk4rfw4"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 0
+script = ExtResource("2_g2els")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3859806, 0, 0)
+shape = SubResource("BoxShape3D_3vyb7")
+
+[node name="mesh" parent="CharacterBody3D" instance=ExtResource("1_3vyb7")]
+
+[node name="HurtBox" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D/HurtBox"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("4_dqkch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/HurtBox/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3336, -0.44413137, 0.100925684)
+shape = SubResource("BoxShape3D_qhqgy")
+
+[node name="UI" type="Node3D" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 453.0
+offset_right = 272.0
+offset_bottom = 644.0
+script = ExtResource("5_qlg0r")
+
+[node name="Button" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 15.0
+offset_right = 186.0
+offset_bottom = 63.0
+text = "↑"
+
+[node name="Button3" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 123.255
+offset_right = 186.0
+offset_bottom = 171.25476
+text = "↓"
+
+[node name="Button2" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 68.0
+offset_right = 129.0
+offset_bottom = 116.0
+text = "←"
+
+[node name="Button4" type="Button" parent="UI/Control"]
+layout_mode = 0
+offset_left = 134.715
+offset_top = 68.0
+offset_right = 248.71512
+offset_bottom = 116.0
+text = "→
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="Label" type="Label" parent="UI/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_qlg0r")
+uppercase = true

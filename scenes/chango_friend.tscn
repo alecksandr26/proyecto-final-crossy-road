@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6c414oihdp12"]
+
+[ext_resource type="PackedScene" uid="uid://bkjhpjfaodjca" path="res://assets/chango.gltf" id="1_1tee6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1tee6"]
+size = Vector3(5.059601, 8.062408, 9.7188425)
+
+[node name="ChangoFriend" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="mesh" parent="StaticBody3D" instance=ExtResource("1_1tee6")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27388, -0.70832825, -0.006725788)
+shape = SubResource("BoxShape3D_1tee6")

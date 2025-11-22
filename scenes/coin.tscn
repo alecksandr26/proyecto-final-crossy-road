@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://4cgtetlivtp6"]
+
+[ext_resource type="Script" uid="uid://c37wul5mdsv07" path="res://scenes/coin.gd" id="1_i64fm"]
+[ext_resource type="PackedScene" uid="uid://g5fyk0jiuvki" path="res://assets/scene.gltf" id="1_rwqht"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwqht"]
+size = Vector3(5.866272, 6.0024757, 1.6117554)
+
+[node name="Coin" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_i64fm")
+
+[node name="mesh" parent="Area3D" instance=ExtResource("1_rwqht")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03817749, 0.011938095, 0.03189087)
+shape = SubResource("BoxShape3D_rwqht")

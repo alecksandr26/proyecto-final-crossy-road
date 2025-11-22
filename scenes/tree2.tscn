@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://l2nggveb6iai"]
+
+[ext_resource type="PackedScene" uid="uid://jy4t4bg3uu1a" path="res://assets/tree2.gltf" id="1_hyyiy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hyyiy"]
+size = Vector3(10.053894, 21.37622, 10.079956)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62k3r"]
+size = Vector3(5.3959045, 9.178223, 5.4605713)
+
+[node name="tree2" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="mesh" parent="StaticBody3D" instance=ExtResource("1_hyyiy")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020050049, 2.0736084, 0.0044555664)
+shape = SubResource("BoxShape3D_hyyiy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012771606, -13.19528, 0.0064086914)
+shape = SubResource("BoxShape3D_62k3r")

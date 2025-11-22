@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://qjfyjqoaluxn"]
+
+[ext_resource type="Script" uid="uid://ct1rc0w8kjg6q" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="FontFile" id="FontFile_vue75"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6cm7"]
+font = SubResource("FontFile_vue75")
+font_size = 20
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 803.0
+offset_bottom = 470.0
+script = ExtResource("1_l6cm7")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 803.0
+offset_bottom = 471.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 132.0
+offset_top = 56.0
+offset_right = 649.0
+offset_bottom = 389.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "El Juego de Erick Alejandro Crossy Road"
+label_settings = SubResource("LabelSettings_l6cm7")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Juegar :D"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Salir ? :("

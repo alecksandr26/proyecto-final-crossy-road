@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxbnqsy56jfsm"]
+
+[ext_resource type="Script" uid="uid://d2adnrqjg845w" path="res://scenes/game_over_menu.gd" id="1_6ebp1"]
+
+[sub_resource type="FontFile" id="FontFile_6skn4"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ebp1"]
+font = SubResource("FontFile_6skn4")
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="GameOverMenu" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 920.0
+offset_bottom = 521.0
+script = ExtResource("1_6ebp1")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 921.0
+offset_bottom = 520.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 50.0
+offset_right = 830.0
+offset_bottom = 392.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_6ebp1")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Retry ?"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Salir ?"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfbgvgtc3pr7l"]
+
+[ext_resource type="Script" uid="uid://d022gu1h0qdos" path="res://scenes/respawn_trigger_tronco.gd" id="1_g1lad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mffkb"]
+size = Vector3(41.485, 27.09, 1)
+
+[node name="RespawnTriggerTronco" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_g1lad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_mffkb")

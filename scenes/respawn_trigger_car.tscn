@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qlt5uqypdfl"]
+
+[ext_resource type="Script" uid="uid://dpjymfn40ubac" path="res://scenes/respawn_trigger_car.gd" id="1_8dqrm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mffkb"]
+size = Vector3(41.485, 27.09, 1)
+
+[node name="RespawnTriggerCar" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_8dqrm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_mffkb")

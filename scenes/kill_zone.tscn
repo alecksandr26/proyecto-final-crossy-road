@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44vbpfwoh7bb"]
+
+[ext_resource type="Script" uid="uid://dexmi38x8m14m" path="res://scenes/kill_zone.gd" id="1_kebdr"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kebdr"]
+
+[node name="KillZone" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_kebdr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("WorldBoundaryShape3D_kebdr")

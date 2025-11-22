@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cik8cfr230582"]
+
+[ext_resource type="Script" uid="uid://bx2wqnk2bs802" path="res://scenes/win_menu.gd" id="1_ki55t"]
+
+[sub_resource type="FontFile" id="FontFile_w6x7u"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ki55t"]
+font = SubResource("FontFile_w6x7u")
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="FontFile" id="FontFile_jx1is"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7shsi"]
+font = SubResource("FontFile_jx1is")
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="WinMenu" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ki55t")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 958.0
+offset_bottom = 531.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 67.0
+offset_right = 749.0
+offset_bottom = 397.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "!!!!GANASTE!!!!!"
+label_settings = SubResource("LabelSettings_ki55t")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7shsi")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Otra xd ?"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Salir ?"

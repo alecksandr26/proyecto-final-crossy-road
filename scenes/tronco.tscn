@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0xb16t36b36t"]
+
+[ext_resource type="Script" uid="uid://xxjgue856hpx" path="res://scenes/tronco.gd" id="1_a1tff"]
+[ext_resource type="PackedScene" uid="uid://cihtos04bl60k" path="res://assets/tronco.gltf" id="1_brx7n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brx7n"]
+size = Vector3(8.556519, 7.508423, 59.241486)
+
+[node name="tronco" type="Node3D"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+collision_mask = 0
+script = ExtResource("1_a1tff")
+
+[node name="mesh" parent="AnimatableBody3D" instance=ExtResource("1_brx7n")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008728027, 0.010681152, -0.009475708)
+shape = SubResource("BoxShape3D_brx7n")
+
+[node name="Area3D" type="Area3D" parent="AnimatableBody3D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008728027, 0.010681152, -0.009475708)
+shape = SubResource("BoxShape3D_brx7n")
