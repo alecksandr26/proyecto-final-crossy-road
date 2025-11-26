@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	# Mostrar monedas recogidas
-	$VBoxContainer/Label.text = "Monedas recogidas: " + str(Global.coins)
+	$VBoxContainer/Label2.text = "Monedas recogidas: " + str(Global.coins)
 	
 	# Conectar botones
 	$VBoxContainer/Button.pressed.connect(_on_retry_pressed)

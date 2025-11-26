@@ -11,13 +11,20 @@ config_version=5
 [application]
 
 config/name="modelos-blender"
-run/main_scene="uid://hcj0itv4mlx"
+run/main_scene="uid://qjfyjqoaluxn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+run/size/viewport_height=648
+run/size/viewport_width=1152
 
 [autoload]
 
 Global="*res://scenes/global.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 

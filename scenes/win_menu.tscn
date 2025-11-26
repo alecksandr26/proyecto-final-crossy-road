@@ -8,9 +8,20 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_ki55t"]
 font = SubResource("FontFile_w6x7u")
+font_size = 60
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
 [sub_resource type="FontFile" id="FontFile_jx1is"]
@@ -19,9 +30,15 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_7shsi"]
 font = SubResource("FontFile_jx1is")
+font_size = 40
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
 [node name="WinMenu" type="Node3D"]
@@ -29,21 +46,22 @@ font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1919.0
+offset_bottom = 1073.0
 script = ExtResource("1_ki55t")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 958.0
-offset_bottom = 531.0
+offset_right = 1918.0
+offset_bottom = 1078.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 67.0
-offset_right = 749.0
-offset_bottom = 397.0
+offset_left = 302.0
+offset_top = 96.0
+offset_right = 1014.0
+offset_bottom = 450.0
+scale = Vector2(1.9332254, 2.1281338)
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2

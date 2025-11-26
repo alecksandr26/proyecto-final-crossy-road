@@ -43,9 +43,6 @@ shape = SubResource("BoxShape3D_w7c3h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.9249, -15.301712, 1.0474548)
 shape = SubResource("BoxShape3D_w8frs")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.80901694, 0.58778536, 0, -0.58778536, -0.80901694, 0, 102.103935, 0)
-
 [node name="tree3" parent="." instance=ExtResource("2_mx8sn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.40833, 42.57814, -57.18082)
 
