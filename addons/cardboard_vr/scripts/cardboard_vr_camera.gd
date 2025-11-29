@@ -6,7 +6,7 @@ class_name CardboardVRCamera extends Camera3D
 @export var UseGyroscope : bool = false
 @export var UseMouseControl : bool = true
 @export var Mouse_Sensitivity : float = 0.003
-@export var GyroscopeFactor : float = 0.2
+@export var GyroscopeFactor : float = 0.5
 @export var Handle_Mouse_Capture : bool = true
 @export var Input_Cancel : String = "ui_cancel"
 
